@@ -6,3 +6,4 @@ pandas
 emoji
 plotly
 numpy
+stopwords
