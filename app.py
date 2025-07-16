@@ -38,7 +38,8 @@ if uploaded_file is not None:
 
     user_list = df['user'].unique().tolist()
     #to remove the Group Notification
-    user_list.remove('Group_Notification')
+    if 'Group_Notification' in user_list:
+        user_list.remove('Group_Notification')
     #TO SORT THE USER_NAMES In the Ascending order
     user_list.sort()
     #inserting at the position to show that analyssis has been selected to the overall rather than individual
@@ -395,48 +396,54 @@ if uploaded_file is not None:
 
 
         #graphs
-        import plotly.graph_objects as go
+import plotly.graph_objects as go
 
-        dfa = helper.most_common_words(selected_user,df)
+dfa = helper.most_common_words(selected_user, df)
 
-        # Compute angles
-        angles_deg = np.linspace(0, 360, len(dfa), endpoint=False)
+# Check if there are any words to plot
+if not dfa.empty:
 
-        # Create polar bar chart
-        fig = go.Figure()
+    # Compute angles safely
+    angles_deg = np.linspace(0, 360, len(dfa), endpoint=False)
 
-        fig.add_trace(go.Barpolar(
-            r=dfa['freq'],
-            theta=angles_deg,
-            width=[360 / len(dfa)] * len(dfa),
-            marker_color=dfa['freq'],
-            marker_colorscale='Turbo',
-            marker_line_color='white',
-            marker_line_width=2,
-            opacity=0.85,
-            text=dfa["word"],
-            hoverinfo="text+r"
-        ))
+    # Create polar bar chart
+    fig = go.Figure()
 
-        fig.update_layout(
+    fig.add_trace(go.Barpolar(
+        r=dfa['freq'],
+        theta=angles_deg,
+        width=[360 / len(dfa)] * len(dfa),
+        marker_color=dfa['freq'],
+        marker_colorscale='Turbo',
+        marker_line_color='white',
+        marker_line_width=2,
+        opacity=0.85,
+        text=dfa["word"],
+        hoverinfo="text+r"
+    ))
 
-            polar=dict(
-                bgcolor='#0e1117',
-                radialaxis=dict(visible=False),
-                angularaxis=dict(
-                    tickmode='array',
-                    tickvals=angles_deg,
-                    ticktext=dfa["word"],
-                    direction="clockwise",
-                    rotation=90
-                ),
+    fig.update_layout(
+        polar=dict(
+            bgcolor='#0e1117',
+            radialaxis=dict(visible=False),
+            angularaxis=dict(
+                tickmode='array',
+                tickvals=angles_deg,
+                ticktext=dfa["word"],
+                direction="clockwise",
+                rotation=90
             ),
-            showlegend=False,
-            paper_bgcolor='#0e1117',
-            font=dict(size=12, color='white')
-        )
+        ),
+        showlegend=False,
+        paper_bgcolor='#0e1117',
+        font=dict(size=12, color='white')
+    )
 
-        st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
+
+else:
+    st.warning("Not enough data to display the most common words chart.")
+
 
         #emoji Ananlysis
 
