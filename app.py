@@ -66,7 +66,7 @@ if uploaded_file is not None:
             st.title(unique_links)
 
             # time line
-        st.title("_____________________________________________________________")
+        st.title("________________________________")
 
         st.title("Most Active Months")
 
