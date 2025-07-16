@@ -11,6 +11,18 @@ from helper import daily_time
 
 st.sidebar.title("Whatsapp Chat")
 #CODE to add the feature for the uploading of the files
+# Show helpful instructions
+with st.sidebar.expander("🛠️ How to Export WhatsApp Chat (.txt)", expanded=True):
+    st.markdown("""
+**Follow these steps carefully before uploading your chat file:**
+
+1. 📱 Open **WhatsApp** and go to the group or chat.
+2. Tap on **three dots → More → Export chat**.
+3. Choose **“Without media”** (⚠️ Required).
+4. A `.zip` file will be downloaded (contains `.txt` file).
+5. **Extract** the `.txt` file from the `.zip`.
+6. Finally, upload the `.txt` file using the uploader below. ✅
+    """)
 uploaded_file=st.sidebar.file_uploader("Choose a Exported Chat File")
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
