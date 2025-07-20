@@ -1,3 +1,4 @@
+
 # WhatsApp Chat Analyzer 📊💬
 
 A data analysis tool built using Python and Streamlit to analyze WhatsApp chat exports. It provides insights into your chat data through various visualizations like word clouds, timelines, activity heatmaps, most active users, and more.
@@ -27,10 +28,9 @@ A data analysis tool built using Python and Streamlit to analyze WhatsApp chat e
 - **Regex** for preprocessing chat data
 
 ---
+# 📂 How to Run Locally
 
-## 📂 How to Run Locally
-
-1. **Clone the repository**
+1.**Clone the repository**
    ```bash
    git clone https://github.com/sahilkumar-1234/Whatsapp-Chat-Analyzer.git
    cd Whatsapp-Chat-Analyzer
