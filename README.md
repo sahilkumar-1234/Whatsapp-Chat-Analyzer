@@ -5,7 +5,7 @@ A data analysis tool built using Python and Streamlit to analyze WhatsApp chat e
 
 
 ![Streamlit Screenshot]<img width="1919" height="900" alt="image" src="https://github.com/user-attachments/assets/ba3298b3-2036-4351-be11-f052d8de346d" />
-)
+
 
 ---
 
@@ -58,8 +58,7 @@ A data analysis tool built using Python and Streamlit to analyze WhatsApp chat e
 | WordCloud                                                                                                        | Activity Map                                                                                                 |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | ![wordcloud](<img width="1122" height="693" alt="image" src="https://github.com/user-attachments/assets/6f96b1b6-248a-477b-aa19-90519fede6a9" />
-) | ![heatmap](<img width="1460" height="676" alt="image" src="https://github.com/user-attachments/assets/34b0bc87-0bbd-4dc9-b539-1ced1b587ba3" />
-) |
+| ![heatmap](<img width="1460" height="676" alt="image" src="https://github.com/user-attachments/assets/34b0bc87-0bbd-4dc9-b539-1ced1b587ba3" />
 
 ---
 
