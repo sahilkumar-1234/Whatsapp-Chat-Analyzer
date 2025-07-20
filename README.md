@@ -8,8 +8,6 @@ A data analysis tool built using Python and Streamlit to analyze WhatsApp chat e
 )
 
 ---
-## Tool Url Link:[https://whatsapp-chat-analyzer-web.streamlit.app]
----
 
 ## 🚀 Features
 
